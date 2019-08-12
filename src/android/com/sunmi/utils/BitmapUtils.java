@@ -25,10 +25,12 @@ import android.util.Log;
 
 /**
  * bitmap操作的工具类
- *
+ * <p>
+ * change canvas.save() in drawTextToBitmap.
+ * </p>
  * @author longtao.li
  * 2012-10-18
- *
+ * @version 2019-08-11, tmalbonph.
  */
 public class BitmapUtils {
 
@@ -441,7 +443,7 @@ public class BitmapUtils {
 
     canvas.drawText(gText, x, y, paint);
 
-    canvas.save(Canvas.ALL_SAVE_FLAG);
+    canvas.save(); //canvas.save(Canvas.ALL_SAVE_FLAG);
     canvas.restore();
 
     return bitmap;
